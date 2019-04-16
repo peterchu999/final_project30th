@@ -18,10 +18,8 @@ class CreateBooksTable extends Migration
             $table->string('book_name');
             $table->string('book_year');
             $table->string('book_category');
-<<<<<<< HEAD
-            $table-bigInteger('owner_id')->nullable();
-=======
->>>>>>> 03776cbf0d3e43609014f9ec9180918eb8d5fbd6
+            $table->bigInteger('owner_id')->unsigned()->nullable();
+            $table->foreign('owner_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
